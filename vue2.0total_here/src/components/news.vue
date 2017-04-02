@@ -1,6 +1,7 @@
-template lang="html">
+<template lang="html">
   <div>
     I am news
+    <loading></loading>
   </div>
 </template>
 

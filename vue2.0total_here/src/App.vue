@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <loading v-show="show"></loading>
     <input type="button" name="" value="点击增加" @click='increment'>
     <input type="button" name="" value="点击减少" @click="decrement">
     <input type="button" name="" value="只有偶数才能点击+" @click="clickOdd">
@@ -26,6 +27,16 @@ import {mapGetters, mapActions} from 'vuex'
 import Header from './components/header'
 export default {
   name: 'app',
+  watch: {
+    $route (to, from) {
+      console.log(to.path)
+      if (to.path === '/news') {
+        this.$store.dispatch('hideHeader')
+      } else {
+        this.$store.dispatch('showHeader')
+      }
+    }
+  },
   components: {
     'v-header': Header
   },
@@ -38,13 +49,16 @@ export default {
   },
   computed: mapGetters([
     'count',
-    'odd'
+    'odd',
+    'show'
   ]),
   methods: mapActions([
     'increment',
     'decrement',
     'clickOdd',
-    'clickAsync'
+    'clickAsync',
+    'showHeader',
+    'hideHeader'
   ]),
   created () {
   // GET /someUrl

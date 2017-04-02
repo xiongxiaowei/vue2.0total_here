@@ -7,10 +7,22 @@ import ElementUI from 'element-ui'
 import vueResource from 'vue-resource'
 import 'element-ui/lib/theme-default/index.css'
 import VueRouter from 'vue-router'
-import store from './store/index'
+import store from './store1/index'
+import Loadings from './components/loading'
+import Loadingss from './components/loading/index1'
+require('./assets/css/base.css')
+/* 全局引入base文件 */
+Vue.use(Loadings)
+Vue.use(Loadingss)
 Vue.use(VueRouter)
 Vue.use(vueResource)
 const router = new VueRouter({
+  mode: 'history',
+  /* 切换路劲模式，变成history模式 */
+  scrollBehavior: () => ({
+    y: 0
+  }),
+  /* 滚动条滚动行为，不加这个就会默认记忆原来滚动条的位置 */
   routes
 })
 Vue.use(ElementUI)

@@ -1,22 +1,26 @@
-import * as types from './types'
-console.log(types)
 export default {
   increment: ({commit}) => {
-    commit(types.INCREMENT)
+    commit('increment')
   },
   decrement({commit}) {
-    commit(types.DECREMENT)
+    commit('decrement')
   },
   clickOdd({commit, state}) {
     if (state.mutations.count % 2 === 0) {
-      commit(types.INCREMENT)
+      commit('increment')
     }
   },
   clickAsync({commit}) {
     return new Promise((resolve) => {
       setTimeout(() => {
-        commit(types.INCREMENT)
+        commit('increment')
       }, 1000)
     })
+  },
+  showHeader({commit}) {
+    commit('showHeader')
+  },
+  hideHeader({commit}) {
+    commit('hideHeader')
   }
 }
