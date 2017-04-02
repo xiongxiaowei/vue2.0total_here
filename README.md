@@ -5,3 +5,6 @@
  - vue-router
  - element-ui
  - vue-resource
+### 更新日志
+> - 用axios代替vue-resource，可参考[vue-axios](https://github.com/imcvampire/vue-axios)
+### bug
