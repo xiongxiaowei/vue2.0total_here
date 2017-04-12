@@ -25,6 +25,11 @@ module.exports = {
       '@': resolve('src'),
       'com':resolve('src/components')
     }
+  //   alias: {
+  //   'src': path.resolve(__dirname, '../src'),
+  //   'common': path.resolve(__dirname, '../src/common'),
+  //   'components': path.resolve(__dirname, '../src/components')
+  // }
   },
   module: {
     rules: [

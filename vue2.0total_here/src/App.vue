@@ -1,16 +1,14 @@
 <template>
   <div id="app">
-    <loading v-show="show"></loading>
+    <loading v-show='loading'></loading>
     <input type="button" name="" value="点击增加" @click='increment'>
     <input type="button" name="" value="点击减少" @click="decrement">
     <input type="button" name="" value="只有偶数才能点击+" @click="clickOdd">
     <input type="button" name="" value="异步增加" @click="clickAsync">
-
       <p>现在的数字是:{{count}},他是{{odd}}</p>
     <el-button type="primary" icon="search">搜索</el-button>
     <img src="./assets/logo.png">
-    <router-link to='/news'>news</router-link>
-    <router-link to='/sports'>sports</router-link>
+    <v-nav></v-nav>
     <div>
       <router-view></router-view>
     </div>
@@ -23,6 +21,7 @@
 </template>
 
 <script>
+import Nav from './components/nav'
 import {mapGetters, mapActions} from 'vuex'
 import Header from './components/header'
 export default {
@@ -38,7 +37,8 @@ export default {
     }
   },
   components: {
-    'v-header': Header
+    'v-header': Header,
+    'v-nav': Nav
   },
   data () {
     return {
@@ -50,7 +50,8 @@ export default {
   computed: mapGetters([
     'count',
     'odd',
-    'show'
+    'show',
+    'loading'
   ]),
   methods: mapActions([
     'increment',
@@ -59,6 +60,7 @@ export default {
     'clickAsync',
     'showHeader',
     'hideHeader'
+
   ]),
   created () {
   // GET /someUrl
@@ -85,12 +87,12 @@ export default {
 </script>
 
 <style>
-#app {
+/*#app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
+}*/
 </style>

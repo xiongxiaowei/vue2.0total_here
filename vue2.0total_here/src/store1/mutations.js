@@ -1,7 +1,8 @@
 import getters from './getters'
 const state = {
   count: 10,
-  show: true
+  show: false,
+  loading: false
 }
 const mutations = {
   increment(state) {
@@ -15,6 +16,12 @@ const mutations = {
   },
   hideHeader(state) {
     state.show = false
+  },
+  showLoading(state) {
+    state.loading = true
+  },
+  hideLoading(state) {
+    state.loading = false
   }
 }
 export default {

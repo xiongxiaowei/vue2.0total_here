@@ -18,6 +18,8 @@
 ### 更新日志
 >- 能发送事件,并能监视路由变化（2017-04-02）
 - 增加axios插件
+- 增加[iview-ui](https://www.iviewui.com/docs/guide/install)[github_address](https://github.com/iview/iview)（2017-04-12）
+
 
 ``` bash
 # install dependencies
